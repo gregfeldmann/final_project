@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Entertainment resource:
+  # CREATE
+  get "/entertainments/new", :controller => "entertainments", :action => "new"
+  post "/create_entertainment", :controller => "entertainments", :action => "create"
+
+  # READ
+  get "/entertainments", :controller => "entertainments", :action => "index"
+  get "/entertainments/:id", :controller => "entertainments", :action => "show"
+
+  # UPDATE
+  get "/entertainments/:id/edit", :controller => "entertainments", :action => "edit"
+  post "/update_entertainment/:id", :controller => "entertainments", :action => "update"
+
+  # DELETE
+  get "/delete_entertainment/:id", :controller => "entertainments", :action => "destroy"
+  #------------------------------
+
   # Routes for the User resource:
   # CREATE
   get "/users/new", :controller => "users", :action => "new"

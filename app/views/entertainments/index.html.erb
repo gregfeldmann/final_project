@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>
+    Entertainments
+    <a href="/entertainments/new" class="btn btn-lg btn-success">New Entertainment</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Title</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @entertainments.each do |entertainment| %>
+      <tr>
+        <td><%= entertainment.title %></td>
+        <td>
+          <a href="/entertainments/<%= entertainment.id %>" class="btn btn-primary">Show</a>
+          <a href="/entertainments/<%= entertainment.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_entertainment/<%= entertainment.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
