@@ -42,7 +42,7 @@
           Entertainment
         </label>
 
-        <input type="text" id="entertainment_id" name="entertainment_id" placeholder="Entertainment" class="form-control" value="<%= @recommend.entertainment_id %>">
+        <%= select_tag(:entertainment_id, options_from_collection_for_select(Entertainment.all, :id, :created_at, @recommend.entertainment_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
