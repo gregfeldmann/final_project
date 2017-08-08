@@ -16,7 +16,7 @@
 
       <% @friends.each do |friend| %>
       <tr>
-        <td><%= friend.sender_id %></td>
+        <td><%= friend.sender.created_at %></td>
         <td><%= friend.accepted_at %></td>
         <td>
           <a href="/friends/<%= friend.id %>" class="btn btn-primary">Show</a>
