@@ -17,7 +17,7 @@
 
       <% @recommends.each do |recommend| %>
       <tr>
-        <td><%= recommend.rating_id %></td>
+        <td><%= recommend.rating.created_at %></td>
         <td><%= recommend.friend_id %></td>
         <td><%= recommend.entertainment_id %></td>
         <td>
