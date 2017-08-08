@@ -24,7 +24,7 @@
           Rating
         </label>
 
-        <input type="text" id="rating_id" name="rating_id" placeholder="Rating" class="form-control" value="<%= @recommend.rating_id %>">
+        <%= select_tag(:rating_id, options_from_collection_for_select(Rating.all, :id, :created_at, @recommend.rating_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for friend_id -->
