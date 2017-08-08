@@ -6,6 +6,8 @@ class EntertainmentsController < ApplicationController
   end
 
   def show
+    @rating = Rating.new
+    @recommend = Recommend.new
     @entertainment = Entertainment.find(params[:id])
 
     render("entertainments/show.html.erb")

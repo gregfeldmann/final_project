@@ -6,6 +6,7 @@ class FriendsController < ApplicationController
   end
 
   def show
+    @recommend = Recommend.new
     @friend = Friend.find(params[:id])
 
     render("friends/show.html.erb")

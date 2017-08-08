@@ -51,6 +51,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_recommend" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for rating_id -->
+      <div class="form-group">
+        <label for="rating_id" class="control-label">
+          Rating
+        </label>
+
+        <%= select_tag(:rating_id, options_from_collection_for_select(Rating.all, :id, :created_at), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for friend_id -->
+      <div class="form-group">
+        <label for="friend_id" class="control-label">
+          Friend
+        </label>
+
+        <%= select_tag(:friend_id, options_from_collection_for_select(Friend.all, :id, :created_at), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for entertainment_id -->
+      <input type="hidden" name="entertainment_id" value="<%= @entertainment.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Recommend
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -82,6 +114,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_rating" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for entertainment_id -->
+      <input type="hidden" name="entertainment_id" value="<%= @entertainment.id %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :created_at), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Rating
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
