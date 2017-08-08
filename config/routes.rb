@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root :to => "friends#index"
   # Routes for the Entertainment resource:
   # CREATE
