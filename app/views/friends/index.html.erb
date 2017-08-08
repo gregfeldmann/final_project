@@ -16,7 +16,13 @@
 
       <% @friends.each do |friend| %>
       <tr>
-        <td><%= friend.sender.created_at %></td>
+        <td>
+          <% if friend.sender.present? %>
+            <a href="/users/<%= friend.sender.id %>">
+              <%= friend.sender.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= friend.accepted_at %></td>
         <td>
           <a href="/friends/<%= friend.id %>" class="btn btn-primary">Show</a>
