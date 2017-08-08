@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "friends#index"
   # Routes for the Entertainment resource:
   # CREATE
   get "/entertainments/new", :controller => "entertainments", :action => "new"
